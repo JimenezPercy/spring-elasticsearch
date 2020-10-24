@@ -1,0 +1,8 @@
+spring:
+  data:
+    elasticsearch:
+      repositories:
+        enable: true
+      cluster-name:  docker-cluster          # 集群名称
+      cluster-nodes:  192.168.94.132:9200    # 这里配置 ES node 地址，必须是 9200 端口。
+
