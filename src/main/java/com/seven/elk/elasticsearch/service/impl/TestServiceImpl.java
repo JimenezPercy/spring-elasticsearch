@@ -17,27 +17,15 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @AllArgsConstructor
 public class TestServiceImpl implements TestService {
-    private ElasticsearchRestTemplate elasticsearchRestTemplate;
+
     private TestMapper mapper;
 //    private ElasticsearchOperations elasticsearchOperations;
 
-    @Override
-    public void createIndex(Class<?> clazz) {
-        log.info("开始创建索引{}", clazz);
-        Object result = elasticsearchRestTemplate.createIndex(clazz);
-        log.info("结果{}", result);
-    }
+
 
     @Override
-    public void deleteIndex(Class<?> clazz) {
-        log.info("开始删除索引{}");
-        Object result = elasticsearchRestTemplate.deleteIndex(clazz);
-        log.info("结果{}", result);
-    }
-
-    @Override
-    public void addDoc(Test t) {
+    public Test save(Test t) {
         log.info("开始保存文档，{}",t);
-        mapper.save(t);
+        return mapper.save(t);
     }
 }

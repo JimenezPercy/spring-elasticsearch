@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Date;
+
 /**
  * @Author: wzp
  * @Date: 2020/10/25 11:56
@@ -20,17 +22,7 @@ public class TestServiceImplTest {
     private TestService testServiceImpl;
 
     @Test
-    public void createIndex() {
-        testServiceImpl.createIndex(Test.class);
-    }
-
-    @Test
-    public void deleteIndex() {
-        testServiceImpl.deleteIndex(Test.class);
-    }
-
-    @Test
     public void addDoc() {
-        testServiceImpl.addDoc(new com.seven.elk.elasticsearch.entity.Test("2","3","5","6","7"));
+        testServiceImpl.save(new com.seven.elk.elasticsearch.entity.Test("1","2","3","4",new Date(),"6","7"));
     }
 }

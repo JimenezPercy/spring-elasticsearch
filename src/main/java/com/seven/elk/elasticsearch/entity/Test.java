@@ -8,6 +8,8 @@ import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
+import java.util.Date;
+
 /**
  * @Author: wzp
  * @Date: 2020/10/24 22:14
@@ -44,7 +46,7 @@ public class Test {
      * 时间
      */
     @Field(type = FieldType.Date, format = DateFormat.basic_date_time)
-    private String dateTime;
+    private Date dateTime;
 
     /**
      * 日志源位置
@@ -58,7 +60,8 @@ public class Test {
     @Field(index = false, type = FieldType.Text)
     private String detail;
 
-    public Test(String title, String category, String user, String position, String detail) {
+    public Test(String id, String title, String category, String user, Date dateTime, String position, String detail) {
+        this.id = id;
         this.title = title;
         this.category = category;
         this.user = user;
