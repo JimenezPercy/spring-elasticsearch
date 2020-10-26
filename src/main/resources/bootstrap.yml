@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: elasticsearch
+  cloud:
+    nacos:
+      config:
+        file-extension: yml
+        clserver-addr: NACOS:32357

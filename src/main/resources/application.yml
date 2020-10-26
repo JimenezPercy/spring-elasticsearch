@@ -5,7 +5,26 @@ spring:
         enable: true
       cluster-name:  docker-cluster
       cluster-nodes:  192.168.94.132:9200
+server:
+  servlet:
+    context-path: "/elasticsearch"
+spring:
+  application:
+    name: elasticsearch
+  cloud:
+    nacos:
+      discovery:
+        metadata:
+          management:
+            context-path: ${server.servlet.context-path}/actuator
 management:
-  health:
-    elasticsearch:
-      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+  metrics:
+    tags:
+      source: elasticsearch

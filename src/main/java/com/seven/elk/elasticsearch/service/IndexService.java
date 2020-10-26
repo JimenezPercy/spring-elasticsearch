@@ -7,25 +7,43 @@ package com.seven.elk.elasticsearch.service;
 public interface IndexService {
     /**
      * 根据实体类创建索引
-     * @param c
+     * @param c 实体类
+     * @return
      */
-    Boolean createIndex(Class<?> c);
+    boolean createIndex(Class<?> c);
 
     /**
-     * 根据索引名称创建索引
-     * @param idxName
+     * 根据实体类创建索引
+     * @param s 索引名称
+     * @return
      */
-    Boolean createIndex(String idxName);
+    boolean createIndex(String s);
 
     /**
      * 根据实体类删除索引
-     * @param c
+     * @param c 实体类
+     * @return
      */
-    Boolean deleteIndex(Class<?> c);
+    boolean deleteIndex(Class<?> c);
 
     /**
-     * 根据实体名称删除索引
-     * @param idxName
+     * 根据索引名称删除索引
+     * @param s 索引名称
+     * @return
      */
-    Boolean deleteIndex(String idxName);
+    boolean deleteIndex(String s);
+
+    /**
+     * 根据实体类判断索引是否存在
+     * @param c 实体类
+     * @return
+     */
+    boolean isIndexExists(Class<?> c);
+
+    /**
+     * 根据索引名称判断索引是否存在
+     * @param s 索引名称
+     * @return
+     */
+    boolean isIndexExists(String s);
 }
