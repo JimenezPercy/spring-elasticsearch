@@ -25,7 +25,7 @@ public class IndexController {
      * @return
      */
     @ApiOperation(value = "创建索引")
-    @PostMapping("/create/indexName")
+    @PostMapping("/create/{indexName}")
     public Boolean createIndex(@PathVariable("indexName") String indexName) {
         return indexServiceImpl.createIndex(indexName);
     }
@@ -36,7 +36,7 @@ public class IndexController {
      * @return
      */
     @ApiOperation(value = "删除索引")
-    @DeleteMapping("/delete/indexName")
+    @DeleteMapping("/delete/{indexName}")
     public Boolean deleteIndex(@PathVariable("indexName") String indexName) {
         return indexServiceImpl.deleteIndex(indexName);
     }
@@ -47,7 +47,7 @@ public class IndexController {
      * @return
      */
     @ApiOperation(value = "判断索引是否存在")
-    @GetMapping("/exist/indexName")
+    @GetMapping("/exist/{indexName}")
     public Boolean isIndexExist(@PathVariable("indexName") String indexName) {
         return indexServiceImpl.isIndexExists(indexName);
     }
