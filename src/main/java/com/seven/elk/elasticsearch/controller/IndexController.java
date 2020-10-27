@@ -16,7 +16,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @RestController
 @RequestMapping("/index")
 @AllArgsConstructor
-@EnableSwagger2
 public class IndexController {
     private final IndexService indexServiceImpl;
 
